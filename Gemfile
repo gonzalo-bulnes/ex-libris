@@ -22,6 +22,12 @@ group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
 
+group :development do
+  gem "better_errors"
+  # binding_of_caller is not required, but recommended by better_errors
+  gem "binding_of_caller"
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
