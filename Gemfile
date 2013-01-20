@@ -27,6 +27,7 @@ group :development do
   gem "better_errors"
   # binding_of_caller is not required, but recommended by better_errors
   gem "binding_of_caller"
+  gem 'route66'
 end
 
 # Gems used only for assets and not required
