@@ -16,3 +16,93 @@
  @import "bootstrap";
  @import "bootstrap-responsive";
  @import "font-awesome";
+
+// Mixins ////
+
+@mixin ex-libris-background {
+  // image size: 248x349
+  background-image: image-url("ex-libris.png");
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+
+@mixin retina-wood {
+  background-image: image-url("retina_wood/retina_wood.png");
+  background-position: bottom left;
+  background-repeat: repeat;
+  background-color: inherit;
+}
+
+// Styles ////
+
+body {
+  // required by .navbar.navbar-fixed-top
+  padding-top: 40px;
+}
+
+@media (max-width: 979px) {
+  body {
+    // reset by .navbar.navbar-fixed-top fix when being responsive
+    padding-top: 0;
+  }
+}
+
+html, body {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+
+// Specific styles for the home page
+
+body#pages-home {
+  @include retina-wood;
+}
+
+#pages-home {
+
+  #footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    a {
+      color: $textColor;
+    }
+  }
+
+  // Hero-unit with background-image
+  .hero-unit.custom-hero-unit {
+    background-color: rgba(0, 0, 0, .7);
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: $white;
+    border-radius: 0;
+    .custom-hero-unit-inner {
+      border-top: 1px solid transparent; // force margin-top of fisrt-child to be applied
+      position: relative;
+      min-height: 349px; // background-height;
+      &:after {
+        @include ex-libris-background;
+        content: "";
+        position: absolute;
+        left: -389px;
+        top: 0;
+        height: 349px; // background-height;
+        width: 248px;
+
+        -webkit-transform: rotate(-5deg);
+           -moz-transform: rotate(-5deg);
+            -ms-transform: rotate(-5deg);
+             -o-transform: rotate(-5deg);
+                transform: rotate(-5deg);
+
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+      }
+      h1 {
+        font-size: 96px;
+        padding-top: 40px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
