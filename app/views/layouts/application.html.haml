@@ -37,7 +37,25 @@
     that you need.
   = #javascript_tag "Modernizr.load();"
 
-%body
+%body{ id: "#{params[:controller] + '-' + params[:action]}"}
+
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        .btn.btn-navbar( data-target=".nav-collapse" data-toggle="collapse" type="button" )
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+
+        = link_to "Ex Libris", root_url, class: 'brand'
+
+        .nav-collapse.collapse
+          %ul.nav
+            - unless params[:controller] == 'pages' and params[:action] == 'home'
+              %li.active
+                %a{ href: "#" }
+                  Iniciar sesión
+                  %i.icon-signin
   /
     Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
     chromium.org/developers/how-tos/chrome-frame-getting-started
@@ -45,8 +63,15 @@
     %p.chromeframe Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
 
   / Add your site or application content here
-  .container
-    = yield
+  = yield
+
+  %footer#footer
+    .container
+      .row
+        .span12
+          %i.icon-github
+          %small
+            %a{ href: 'https://github.com/gonzalo-bulnes/ex-libris', title: "Including the image credits" } Credits
 
   / JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom
   = javascript_include_tag 'application'
