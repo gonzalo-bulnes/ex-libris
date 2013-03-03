@@ -1,17 +1,17 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: translator_notebook_development
+  database: ex_libris_development
   pool: 5
-  username: translator_notebook
+  username: ex_libris
   password:
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: translator_notebook_test
+  database: ex_libris_test
   pool: 5
-  username: translator_notebook
+  username: ex_libris
   password:
 
 # production not necessary to deploy to Heroku

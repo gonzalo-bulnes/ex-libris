@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Translatornotebook::Application.load_tasks
+ExLibris::Application.load_tasks
