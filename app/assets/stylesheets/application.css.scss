@@ -52,6 +52,12 @@ html, body {
   overflow: hidden;
 }
 
+// Fix Bootstrap .btn anchor color
+a.btn {
+  &:visited {
+    color: $grayDark;
+  }
+}
 
 // Specific styles for the home page
 

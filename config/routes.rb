@@ -1,5 +1,11 @@
 ExLibris::Application.routes.draw do
 
+  # OmniAuth
+  post 'auth/open_id/callback', to: 'sessions#create'
+  post 'auth/failure', to: redirect('/')
+
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
   root to: 'pages#home'
 
   # The priority is based upon order of creation:
