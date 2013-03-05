@@ -49,7 +49,6 @@ body {
 
 html, body {
   min-height: 100%;
-  overflow: hidden;
 }
 
 // Fix Bootstrap .btn anchor color
@@ -151,3 +150,32 @@ body#pages-home {
   }
 }
 
+// Pictures Gallery
+#pages-home {
+  .thumbnails {
+    margin-top: 40px;
+    .thumbnail {
+      background-color: $white;
+      float: left;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      &:hover, &:focus {
+        transform: rotate(-2deg);
+      }
+      .caption {
+        padding-left: 4px;
+        padding-right: 4px;
+        p {
+          margin-bottom: 0;
+          strong {
+            font-size: 22px;
+            padding-left: 2px;
+            i {
+              color: $successText;
+            }
+          }
+        }
+      }
+    }
+  }
+}

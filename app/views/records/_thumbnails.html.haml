@@ -1,0 +1,5 @@
+- @records = [{ location: '8G' }, { location: 'A1' }]
+
+.thumbnails
+  - @records.each do |record|
+    = render 'records/thumbnail', record: record
