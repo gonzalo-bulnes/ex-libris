@@ -2,9 +2,14 @@ class SessionsController < ApplicationController
 
   # POST 'create'
   def create
-   user = User.from_omniauth(env['omniauth.auth'])
-   session[:user_id] = user.id
-   redirect_to root_url, notice: "Signed in."
+    user = User.from_omniauth(env['omniauth.auth'])
+
+    if user.presence
+      session[:user_id] = user.id
+      redirect_to root_url, notice: "Signed in."
+    else
+      redirect_to root_url, notice: "Not signed in."
+    end
   end
 
   # GET 'destroy'

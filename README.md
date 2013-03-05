@@ -6,6 +6,15 @@ Ex Libris
 
 A collaborative library inventory tool.
 
+Guests Whitelist
+----------------
+
+The list of people who can sign in with OmniAuth is defined in the `ENV['EX_LIBRIS_GUESTS']` variable. You can set it when starting your server:
+
+```bash
+EX_LIBRIS_GUESTS="john@example.com,alice@secure.com" rails server
+```
+
 Credits
 -------
 
