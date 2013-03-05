@@ -112,3 +112,32 @@ body#pages-home {
     }
   }
 }
+
+// Navigation
+.navbar .nav {
+  float: right;
+}
+
+@media (max-width: 979px) {
+  .navbar .nav {
+    // reset float right when being responsive
+    float: left;
+  }
+}
+
+// Fix Bootstrap .dropdown-menu
+.dropdown-menu .dropdown-toggle {
+  &, &:active {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 979px) {
+  .nav-collapse .dropdown-menu .dropdown-toggle {
+    &, &:active {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+}
