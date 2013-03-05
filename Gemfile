@@ -53,3 +53,5 @@ gem 'jquery-rails'
 gem 'omniauth-openid'
 
 gem 'gravatar_image_tag'
+
+gem 'thin'
