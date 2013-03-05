@@ -4,15 +4,15 @@ describe PagesController do
 
   describe "GET #home" do
 
-    it "should return HTTP success" do
+    before(:each) do
       get 'home'
+    end
 
+    it "should return HTTP success" do
       response.should be_success
     end
 
     it "should render 'pages/home'" do
-      get 'home'
-
       response.should render_template :home
     end
   end

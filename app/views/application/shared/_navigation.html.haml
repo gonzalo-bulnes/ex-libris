@@ -1,0 +1,30 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      .btn.btn-navbar( data-target=".nav-collapse" data-toggle="collapse" type="button" )
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+
+      = link_to "Ex Libris", root_url, class: 'brand'
+
+      .nav-collapse.collapse
+        %ul.nav
+          - if current_user
+            / See http://twitter.github.com/bootstrap/components.html#dropdowns
+            %li#menu-user.dropdown.gravatar
+              %a.dropdown-toggle{ href: "menu-user" }( data-toggle="dropdown" )
+                %span
+                  = gravatar_image_tag(current_user.email, alt: "")
+                  = current_user.name
+                %ul.dropdown-menu
+                  %li
+                    %a{ href: signout_path }
+                      Cerrar sesión
+                      %i.icon-signout
+          - else
+            - unless params[:controller] == 'pages' and params[:action] == 'home'
+              %li.active
+                %a{ href: "#" }
+                  Iniciar sesión
+                  %i.icon-signin

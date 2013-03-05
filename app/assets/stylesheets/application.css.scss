@@ -52,6 +52,12 @@ html, body {
   overflow: hidden;
 }
 
+// Fix Bootstrap .btn anchor color
+a.btn {
+  &:visited {
+    color: $grayDark;
+  }
+}
 
 // Specific styles for the home page
 
@@ -106,3 +112,42 @@ body#pages-home {
     }
   }
 }
+
+// Navigation
+.navbar .nav {
+  float: right;
+}
+
+@media (max-width: 979px) {
+  .navbar .nav {
+    // reset float right when being responsive
+    float: left;
+  }
+}
+
+.nav .gravatar .dropdown-toggle {
+  padding-bottom: 4px;
+  padding-top: 4px;
+  img {
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+}
+
+// Fix Bootstrap .dropdown-menu
+.nav .dropdown-menu .dropdown-toggle {
+  &, &:active {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 979px) {
+  .nav-collapse .nav .dropdown-menu .dropdown-toggle {
+    &, &:active {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+}
+

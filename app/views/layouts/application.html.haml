@@ -39,23 +39,8 @@
 
 %body{ id: "#{params[:controller] + '-' + params[:action]}"}
 
-  .navbar.navbar-inverse.navbar-fixed-top
-    .navbar-inner
-      .container
-        .btn.btn-navbar( data-target=".nav-collapse" data-toggle="collapse" type="button" )
-          %span.icon-bar
-          %span.icon-bar
-          %span.icon-bar
+  = render 'application/shared/navigation'
 
-        = link_to "Ex Libris", root_url, class: 'brand'
-
-        .nav-collapse.collapse
-          %ul.nav
-            - unless params[:controller] == 'pages' and params[:action] == 'home'
-              %li.active
-                %a{ href: "#" }
-                  Iniciar sesión
-                  %i.icon-signin
   /
     Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
     chromium.org/developers/how-tos/chrome-frame-getting-started
