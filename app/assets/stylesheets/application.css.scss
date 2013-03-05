@@ -125,8 +125,17 @@ body#pages-home {
   }
 }
 
+.nav .gravatar .dropdown-toggle {
+  padding-bottom: 4px;
+  padding-top: 4px;
+  img {
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+}
+
 // Fix Bootstrap .dropdown-menu
-.dropdown-menu .dropdown-toggle {
+.nav .dropdown-menu .dropdown-toggle {
   &, &:active {
     padding-bottom: 0;
     padding-top: 0;
@@ -134,10 +143,11 @@ body#pages-home {
 }
 
 @media (max-width: 979px) {
-  .nav-collapse .dropdown-menu .dropdown-toggle {
+  .nav-collapse .nav .dropdown-menu .dropdown-toggle {
     &, &:active {
       padding-bottom: 0;
       padding-top: 0;
     }
   }
 }
+

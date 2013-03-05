@@ -51,3 +51,5 @@ gem 'jquery-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'omniauth-openid'
+
+gem 'gravatar_image_tag'

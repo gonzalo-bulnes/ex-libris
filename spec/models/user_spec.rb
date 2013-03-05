@@ -16,6 +16,10 @@ describe User do
     should respond_to :uid
   end
 
+  it "should have an e-mail address" do
+    should respond_to :email
+  end
+
   # associations
 
   # validations

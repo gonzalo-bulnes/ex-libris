@@ -12,10 +12,10 @@
         %ul.nav
           - if current_user
             / See http://twitter.github.com/bootstrap/components.html#dropdowns
-            %li#menu-user.dropdown
+            %li#menu-user.dropdown.gravatar
               %a.dropdown-toggle{ href: "menu-user" }( data-toggle="dropdown" )
                 %span
-                  %i.icon-user
+                  = gravatar_image_tag(current_user.email, alt: "")
                   = current_user.name
                 %ul.dropdown-menu
                   %li
