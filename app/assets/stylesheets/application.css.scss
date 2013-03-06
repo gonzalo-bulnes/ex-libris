@@ -154,6 +154,7 @@ body#pages-home {
 #pages-home {
   .thumbnails {
     margin-top: 40px;
+    margin-left: 0; // .thumbnail have no .spanX
     .thumbnail {
       background-color: $white;
       float: left;
@@ -175,6 +176,24 @@ body#pages-home {
             }
           }
         }
+      }
+    }
+    .placeholder {
+      color: rgba(0, 0, 0, 0.2);
+      padding-top: 60px;
+      text-align: center;
+      transform: rotate(-2deg);
+      & a {
+        color: rgba(0, 85, 128, 0.4);
+        &:hover, &:focus {
+          color: rgba(0, 136, 205, 0.4);
+        }
+      }
+      i {
+        font-size: 280px;
+      }
+      p {
+        font-size: 2em;
       }
     }
   }

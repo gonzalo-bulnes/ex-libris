@@ -1,5 +1,10 @@
-- @records = [{ location: '8G' }, { location: 'A1' }]
-
 .thumbnails
-  - @records.each do |record|
-    = render 'records/thumbnail', record: record
+  - if @records.presence
+    - @records.each do |record|
+      = render 'records/thumbnail', record: record
+  - else
+    .placeholder
+      %i.icon-picture
+      %p
+        There are no records yet,
+        = link_to("create a record now", '#') + '!'
