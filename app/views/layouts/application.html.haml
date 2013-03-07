@@ -48,15 +48,17 @@
     %p.chromeframe Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.
 
   / Add your site or application content here
-  = yield
-
-  %footer#footer
+  - if current_user
     .container
       .row
-        .span12
-          %i.icon-github
-          %small
-            %a{ href: 'https://github.com/gonzalo-bulnes/ex-libris', title: "Including the image credits" } Credits
+        .span10
+          = yield
+        .span2
+          = render 'application/shared/sidebar'
+  - else
+    = yield
+
+  = render 'application/shared/footer'
 
   / JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom
   = javascript_include_tag 'application'

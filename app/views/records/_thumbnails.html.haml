@@ -1,0 +1,10 @@
+.thumbnails
+  - if @records.presence
+    - @records.each do |record|
+      = render 'records/thumbnail', record: record
+  - else
+    .placeholder
+      %i.icon-picture
+      %p
+        Aún no hay registros,
+        = link_to("crea uno ahora", new_record_path, title: 'Crea un registro ahora') + '!'

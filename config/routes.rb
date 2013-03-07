@@ -1,5 +1,7 @@
 ExLibris::Application.routes.draw do
 
+  resources :records, only: [:new, :create, :index]
+
   # OmniAuth
   post 'auth/open_id/callback', to: 'sessions#create'
   post 'auth/failure', to: redirect('/')

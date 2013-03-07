@@ -1,0 +1,14 @@
+es:
+  helpers:
+    submit:
+      record:
+        create: 'Crear registro'
+    cancel: 'Cancelar'
+
+  activerecord:
+    errors:
+      models:
+        record:
+          attributes:
+            location:
+              blank: 'no puede estar en blanco'

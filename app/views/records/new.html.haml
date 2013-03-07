@@ -1,0 +1,11 @@
+.container
+  .span4.offset2
+
+    = simple_form_for @record, html: { class: 'form-horizontal', multipart: true } do |f|
+      = f.file_field :picture
+      = f.input :location, input_html: { class: 'input-mini' }
+
+      = link_to t('helpers.cancel'), records_path, { class: 'btn btn-link' }
+      = f.button :submit, class: 'btn btn-info'
+
+  .span2
