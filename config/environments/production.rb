@@ -70,7 +70,8 @@ ExLibris::Application.configure do
   # See https://devcenter.heroku.com/articles/paperclip-s3
   config.paperclip_defaults = {
     :storage => :s3,
-    :path => ":attachment/:id/:style.:extension",
+    :path => ":class/:attachment/:id_partition/:style/:filename",
+    :url => ":s3_path_url",
     :s3_credentials => {
       :bucket => ENV['S3_BUCKET'],
       :access_key_id => ENV['S3_ACCESS_KEY_ID'],
