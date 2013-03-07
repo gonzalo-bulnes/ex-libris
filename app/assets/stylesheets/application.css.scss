@@ -60,7 +60,7 @@ a.btn {
 
 // Specific styles for the home page
 
-body#pages-home {
+body {
   @include retina-wood;
 }
 
@@ -151,7 +151,7 @@ body#pages-home {
 }
 
 // Pictures Gallery
-#pages-home {
+#pages-home, #records-index {
   .thumbnails {
     margin-top: 40px;
     margin-left: 0; // .thumbnail have no .spanX
