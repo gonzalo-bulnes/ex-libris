@@ -19,5 +19,10 @@ es:
         new:
           location: 'Referencia del estante'
 
+    placeholders:
+      record:
+        new:
+          location: 'ej. 4B'
+
     hints:
       defaults:
