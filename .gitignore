@@ -16,3 +16,6 @@
 
 # Ignore sensible config files
 /config/database.yml
+
+# Paperclip files
+/public/system
