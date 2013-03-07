@@ -33,6 +33,236 @@
   background-color: inherit;
 }
 
+// Hotfixes ////
+
+// Fix Bootstrap .btn anchor color
+a.btn {
+  &:visited {
+    color: $grayDark;
+  }
+}
+
+// Fix Bootstrap .dropdown-menu
+.nav .dropdown-menu .dropdown-toggle {
+  &, &:active {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 979px) {
+  .nav-collapse .nav .dropdown-menu .dropdown-toggle {
+    &, &:active {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+// Fix Route66
+#route66-index {
+  .table {
+    background-color: $white;
+    margin-top: 30px;
+  }
+}
+
+// Styles ////
+
+body {
+  // required by .navbar.navbar-fixed-top
+  padding-top: 40px;
+}
+
+@media (max-width: 979px) {
+  body {
+    // reset by .navbar.navbar-fixed-top fix when being responsive
+    padding-top: 0;
+  }
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  @include retina-wood;
+}
+
+// Navigation
+.navbar .nav {
+  float: right;
+}
+
+@media (max-width: 979px) {
+  .navbar .nav {
+    // reset float right when being responsive
+    float: left;
+  }
+}
+
+.nav .gravatar .dropdown-toggle {
+  padding-bottom: 4px;
+  padding-top: 4px;
+
+  img {
+    border-radius: 4px;
+    margin-right: 4px;
+  }
+}
+
+// Sidebar
+.sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-border-bottom-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+  -webkit-box-shadow: 4px 12px 18px rgba(0, 0, 0, 0.2);
+          box-shadow: 4px 12px 18px rgba(0, 0, 0, 0.2);
+  padding-bottom: 60px;
+  padding-top: 60px;
+
+  .sidebar-inner {
+    margin: 20px;
+  }
+}
+
+// Footer
+#footer {
+  bottom: 10px;
+  position: absolute;
+  width: 100%;
+
+  a {
+    color: $textColor;
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1.0;
+    }
+  }
+}
+
+// Home page
+body#pages-home {
+
+  // Hero-unit with background-image
+  .hero-unit.custom-hero-unit {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 0;
+            border-radius: 0;
+    -webkit-box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+    color: $white;
+
+    .custom-hero-unit-inner {
+      border-top: 1px solid transparent; // force margin-top of first-child to be applied
+      min-height: 349px; // background-height;
+      position: relative;
+
+      &:after {
+        @include ex-libris-background;
+        -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        content: "";
+        height: 349px; // background-height;
+        left: -389px;
+        position: absolute;
+        top: 0;
+        width: 248px;
+
+        html.no-csstransforms3d & {
+          -webkit-transform: rotate(-5deg);
+                  transform: rotate(-5deg);
+        }
+        -webkit-transform: rotateX(-5deg);
+            -ms-transform: rotateX(-5deg);
+                transform: rotateX(-5deg);
+      }
+      h1 {
+        font-size: 96px;
+        padding-bottom: 30px;
+        padding-top: 40px;
+      }
+    }
+  }
+}
+
+// Pictures Gallery
+body#pages-home, body#records-index {
+
+  .thumbnails {
+    margin-left: 0; // .thumbnail have no .spanX
+    margin-top: 40px;
+
+    .thumbnail {
+      background-color: $white;
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+      float: left;
+      margin-bottom: 20px;
+      margin-left: 20px;
+
+      &:hover, &:focus {
+        html.no-csstransforms3d & {
+          -webkit-transform: rotate(-2deg);
+                  transform: rotate(-2deg);
+        }
+        transform: rotateX(-2deg);
+      }
+
+      .caption {
+        padding-left: 4px;
+        padding-right: 4px;
+        p {
+          margin-bottom: 0;
+          strong {
+            font-size: 16px;
+            padding-left: 2px;
+            i {
+              color: $successText;
+            }
+          }
+        }
+      }
+    }
+    .placeholder {
+      color: rgba(0, 0, 0, 0.2);
+      padding-top: 60px;
+      text-align: center;
+
+      html.no-csstransforms3d & {
+        transform: rotate(-2deg);
+      }
+      transform: rotateX(-2deg);
+
+      & a {
+        color: rgba(0, 85, 128, 0.4);
+        &:hover, &:focus {
+          color: rgba(0, 136, 205, 0.4);
+        }
+      }
+
+      i {
+        font-size: 280px;
+      }
+
+      p {
+        font-size: 2em;
+      }
+    }
+  }
+}
+
+// New Record Form
+body#records-new {
+
+  #record_location {
+    text-align: center;
+  }
+}
+
 // Bootstrap extensions ////
 
 // Icon buttons, must be used with .btn, see comments for options.
@@ -111,196 +341,4 @@
   }
 }
 
-// Styles ////
-
-body {
-  // required by .navbar.navbar-fixed-top
-  padding-top: 40px;
-}
-
-@media (max-width: 979px) {
-  body {
-    // reset by .navbar.navbar-fixed-top fix when being responsive
-    padding-top: 0;
-  }
-}
-
-html, body {
-  min-height: 100%;
-}
-
-// Fix Bootstrap .btn anchor color
-a.btn {
-  &:visited {
-    color: $grayDark;
-  }
-}
-
-// Specific styles for the home page
-
-body {
-  @include retina-wood;
-}
-
-#footer {
-  width: 100%;
-  position: absolute;
-  bottom: 10px;
-  a {
-    color: $textColor;
-    opacity: 0.3;
-    &:hover {
-      opacity: 1.0;
-    }
-  }
-}
-
-#pages-home {
-
-  // Hero-unit with background-image
-  .hero-unit.custom-hero-unit {
-    background-color: rgba(0, 0, 0, .7);
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    color: $white;
-    border-radius: 0;
-    .custom-hero-unit-inner {
-      border-top: 1px solid transparent; // force margin-top of fisrt-child to be applied
-      position: relative;
-      min-height: 349px; // background-height;
-      &:after {
-        @include ex-libris-background;
-        content: "";
-        position: absolute;
-        left: -389px;
-        top: 0;
-        height: 349px; // background-height;
-        width: 248px;
-
-        -webkit-transform: rotate(-5deg);
-           -moz-transform: rotate(-5deg);
-            -ms-transform: rotate(-5deg);
-             -o-transform: rotate(-5deg);
-                transform: rotate(-5deg);
-
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
-      }
-      h1 {
-        font-size: 96px;
-        padding-top: 40px;
-        padding-bottom: 30px;
-      }
-    }
-  }
-}
-
-// Navigation
-.navbar .nav {
-  float: right;
-}
-
-@media (max-width: 979px) {
-  .navbar .nav {
-    // reset float right when being responsive
-    float: left;
-  }
-}
-
-.nav .gravatar .dropdown-toggle {
-  padding-bottom: 4px;
-  padding-top: 4px;
-  img {
-    border-radius: 4px;
-    margin-right: 4px;
-  }
-}
-
-// Fix Bootstrap .dropdown-menu
-.nav .dropdown-menu .dropdown-toggle {
-  &, &:active {
-    padding-bottom: 0;
-    padding-top: 0;
-  }
-}
-
-@media (max-width: 979px) {
-  .nav-collapse .nav .dropdown-menu .dropdown-toggle {
-    &, &:active {
-      padding-bottom: 0;
-      padding-top: 0;
-    }
-  }
-}
-
-// Pictures Gallery
-#pages-home, #records-index {
-  .thumbnails {
-    margin-top: 40px;
-    margin-left: 0; // .thumbnail have no .spanX
-    .thumbnail {
-      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-      background-color: $white;
-      float: left;
-      margin-bottom: 20px;
-      margin-left: 20px;
-      &:hover, &:focus {
-        transform: rotate(-2deg);
-      }
-      .caption {
-        padding-left: 4px;
-        padding-right: 4px;
-        p {
-          margin-bottom: 0;
-          strong {
-            font-size: 16px;
-            padding-left: 2px;
-            i {
-              color: $successText;
-            }
-          }
-        }
-      }
-    }
-    .placeholder {
-      color: rgba(0, 0, 0, 0.2);
-      padding-top: 60px;
-      text-align: center;
-      transform: rotate(-2deg);
-      & a {
-        color: rgba(0, 85, 128, 0.4);
-        &:hover, &:focus {
-          color: rgba(0, 136, 205, 0.4);
-        }
-      }
-      i {
-        font-size: 280px;
-      }
-      p {
-        font-size: 2em;
-      }
-    }
-  }
-}
-
-.sidebar {
-  padding-bottom: 60px;
-  padding-top: 60px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  box-shadow: 4px 12px 18px rgba(0, 0, 0, 0.2);
-  .sidebar-inner {
-    margin: 20px;
-  }
-}
-
-#record_location {
-  text-align: center;
-}
-
-#route66-index {
-  .table {
-    background-color: $white;
-    margin-top: 30px;
-  }
-}
+// The end! ////
