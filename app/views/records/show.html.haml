@@ -1,0 +1,9 @@
+.record
+  = image_tag @record.picture.url(:medium), class: "img-polaroid"
+  .caption
+    %p
+      %i.icon-map-marker
+      Estante
+      %strong
+        = @record[:location]
+        %i.icon-eye-open

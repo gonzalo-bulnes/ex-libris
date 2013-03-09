@@ -1,0 +1,15 @@
+.books
+  - if @books.presence
+    - @books.each do |book|
+      %table.table.table-bordered.table-striped
+        %thead
+          = render 'books/table_headers'
+        %tbody
+          = render 'books/table_row', book: book
+  - else
+    .placeholder
+      %i.icon-book
+      %h1 Ningún libro ha sido inventariado.
+      %p
+        Puedes empezar el inventario ahora
+        = link_to("con el registro que quieras", records_path, title: 'Crea libros ahora') + '.'

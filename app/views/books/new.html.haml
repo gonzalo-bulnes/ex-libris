@@ -1,0 +1,24 @@
+.container
+  .span4.offset2
+
+    = simple_form_for @book, html: { class: 'form-horizontal', multipart: true } do |f|
+
+      = f.input :author
+      = f.input :editor
+      = f.input :title
+      = f.input :publisher
+      = f.input :year
+      = f.input :volume
+      = f.input :number
+      = f.input :series
+      = f.input :address
+      = f.input :edition
+      = f.input :month
+      = f.input :note
+      = f.input :key
+      = f.input :isbn
+
+      = link_to t('helpers.cancel'), books_path, { class: 'btn btn-link' }
+      = f.button :submit, class: 'btn btn-info'
+
+  .span2

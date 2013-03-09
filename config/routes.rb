@@ -1,6 +1,10 @@
 ExLibris::Application.routes.draw do
 
-  resources :records, only: [:new, :create, :index]
+  resources :records, only: [:new, :create, :index, :show] do
+    resources :books, only: [:new, :create, :edit, :update]
+  end
+
+  resources :books, only: [:show, :index]
 
   # OmniAuth
   post 'auth/open_id/callback', to: 'sessions#create'
