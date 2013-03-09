@@ -59,6 +59,13 @@ body .nav .dropdown-menu .dropdown-toggle {
   }
 }
 
+// Fix Route66
+#route66-index {
+  .table {
+    background-color: $white;
+  }
+}
+
 // Bootstrap extensions ////
 
 // Icon buttons, must be used with .btn, see comments for options.

@@ -65,4 +65,17 @@ ExLibris::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  # Paperclip settings for AWS S3 Storage on Heroku
+  # See https://devcenter.heroku.com/articles/paperclip-s3
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :path => ":class/:attachment/:id_partition/:style/:filename",
+    :url => ":s3_path_url",
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET'],
+      :access_key_id => ENV['S3_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
+    }
+  }
 end

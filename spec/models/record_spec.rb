@@ -8,6 +8,10 @@ describe Record do
     should respond_to :location
   end
 
+  it "has a picture" do
+    should have_attached_file :picture
+  end
+
   it "has a state" do
     should respond_to :state
   end
@@ -38,8 +42,19 @@ describe Record do
     FactoryGirl.build(:record, location: "").should_not be_valid
   end
 
+  it "validates the picture presence" do
+    should validate_attachment_presence(:picture)
+  end
+
+  it "validates the picture content type" do
+    should validate_attachment_content_type(:picture).allowing('image/png', 'image/jpg')
+  end
+
+  it "validates the picture size doesn't exceed 1MB" do
+    should validate_attachment_size(:picture).less_than(1.megabyte)
+  end
+
   it "requires an estimate of the number of books on the picture" do
     FactoryGirl.build(:record, number_of_books_estimate: "").should_not be_valid
   end
-
 end
