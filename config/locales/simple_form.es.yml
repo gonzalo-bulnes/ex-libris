@@ -1,0 +1,34 @@
+es:
+  simple_form:
+    "yes": 'Sí'
+    "no": 'No'
+
+    required:
+      text: 'Obligatorio'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      html: '<abbr title="Campo obligatorio"><i class="icon-asterisk"></i></abbr>'
+
+    error_notification:
+      default_message: "Por favor, revisa los errores:"
+
+    labels:
+      defaults:
+      record:
+        picture: 'Fotografía'
+        location: 'Referencia del estante'
+        number_of_books_estimate: '¿Cuántos libros hay en la fotografía?'
+
+    placeholders:
+      record:
+        new:
+          picture: ''
+          location: 'ej. 4B'
+          number_of_books_estimate: 'ej. 3'
+
+    hints:
+      defaults:
+      record:
+        edit:
+          picture: 'Si no quieres cambiar la fotografía, deja este campo en blanco'

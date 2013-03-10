@@ -1,0 +1,24 @@
+.container
+  .row
+    .span6.offset3
+      .record
+        %h1
+          %i.icon-picture
+          = t('helpers.record.title.show')
+          %small
+            <i class="icon-book"></i> 2 libros
+
+        .row.row-desktop
+          = image_tag @record.picture.url(:medium), class: "img-polaroid", class: 'span6'
+        .row.row-desktop
+          .span6
+            %span
+              %i.icon-map-marker
+              Estante
+              %strong
+                = @record.location
+
+            %a.btn.btn-link.custom-btn-icon.custom-btn-icon-inverse{ href: '#', title: 'Este registro está listo para revisar.' }
+              %i.icon-eye-open
+            = link_to raw('<i class="icon-plus"></i> Agregar un libro'), '#', class: 'btn'
+            = link_to raw('<i class="icon-comments"></i> 6 comentarios'), '#', class: 'btn btn-link'

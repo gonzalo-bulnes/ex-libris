@@ -1,0 +1,29 @@
+es:
+  helpers:
+    record:
+      title:
+        edit: 'Editar registro'
+        new: 'Nuevo registro'
+        show: 'Ver registro'
+    submit:
+      update: 'Guardar'
+      record:
+        create: 'Crear registro'
+    cancel: 'Cancelar'
+
+  activerecord:
+    errors:
+      messages:
+        blank: 'no puede estar en blanco'
+      models:
+        record:
+          attributes:
+            picture:
+              blank: '(es obligatoria)'
+
+  number:
+    human:
+      storage_units:
+        format: 'number.member.human.storage_units.format'
+        units:
+          byte: 'number.member.human.storage_units.format.units.byte'

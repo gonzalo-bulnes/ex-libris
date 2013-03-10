@@ -47,7 +47,7 @@ describe Record do
   end
 
   it "validates the picture content type" do
-    should validate_attachment_content_type(:picture).allowing('image/png', 'image/jpg')
+    should validate_attachment_content_type(:picture).allowing('image/png', 'image/jpg', 'image/jpeg')
   end
 
   it "validates the picture size doesn't exceed 1MB" do
