@@ -2,7 +2,7 @@ Ex Libris
 =========
 
 [![Build Status](https://secure.travis-ci.org/gonzalo-bulnes/ex-libris.png?branch=master)](http://travis-ci.org/gonzalo-bulnes/ex-libris)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/gonzalo-bulnes/ex-libris)
+[![Code Climate](https://codeclimate.com/github/gonzalo-bulnes/ex-libris.png)](https://codeclimate.com/github/gonzalo-bulnes/ex-libris)
 
 A collaborative library inventory tool.
 
