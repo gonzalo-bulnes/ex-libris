@@ -3,6 +3,7 @@ class Record < ActiveRecord::Base
 
   has_attached_file :picture, styles: { medium: "600x480>", thumb: "130x130>" }, \
                               default_url: 'http://placehold.it/130x130'
+  has_many :books
 
   validates_presence_of :location, :number_of_books_estimate, :picture
   validates_attachment :picture, presence: true, \

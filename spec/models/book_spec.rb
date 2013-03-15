@@ -62,6 +62,10 @@ describe Book do
 
   # associations
 
+  it "belongs to a record" do
+    should belong_to :record
+  end
+
   # validations
 
   it "should have valid factory" do
@@ -85,5 +89,25 @@ describe Book do
 
   it "requires a year of publication" do
     FactoryGirl.build(:book, year: "").should_not be_valid
+  end
+
+  it "validates the ISBN number" do
+    pending "Not yet implemented."
+  end
+
+  it "validates the number" do
+    pending "Not yet implemented."
+  end
+
+  it "validates the volume" do
+    pending "Not yet implemented."
+  end
+
+  it "validates the month of publication" do
+    pending "Not yet implemented."
+  end
+
+  it "validates the year of publication" do
+    pending "Not yet implemented."
   end
 end

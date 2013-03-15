@@ -1,0 +1,18 @@
+.container
+  .row
+    .span6.offset3
+      .book
+        %h1
+          %i.icon-book
+          = @book.title.truncate(24, omission: '...')
+          %small
+            = @book.isbn
+
+        .row.row-desktop
+          .span6
+            .book-actions
+              %span.info
+                %i.icon-map-marker
+                Estante
+                %strong
+                  = @book.record.location

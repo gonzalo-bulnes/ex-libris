@@ -22,8 +22,7 @@ describe Record do
 
   # associations
 
-  xit "has many books" do
-    pending "not implemented yet"
+  it "has many books" do
     should have_many :books
   end
 

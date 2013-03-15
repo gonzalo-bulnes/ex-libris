@@ -1,0 +1,32 @@
+= simple_form_for @book, url: record_books_url, html: { class: 'custom-form' } do |f|
+
+  .form-notifications
+    = f.error_notification
+
+  .form-inputs
+    = f.hidden :record_id, value: params[:record_id]
+    = f.input :author, input_html: { class: 'input-block-level' }
+    = f.input :editor, input_html: { class: 'input-block-level' }
+    = f.input :title, input_html: { class: 'input-block-level', rows: '3' }
+    = f.input :publisher, input_html: { class: 'input-block-level' }
+    .row
+      .span2
+        = f.input :year, input_html: { class: 'input-small' }
+      .span3
+        = f.input :month, input_html: { class: 'input-mini' }
+    = f.input :series, input_html: { class: 'input-block-level' }
+    .row
+      .span2
+        = f.input :volume, input_html: { class: 'input-block-level' }
+      .span1
+        = f.input :number, input_html: { class: 'input-mini' }
+      .span2
+        = f.input :edition, input_html: { class: 'input-small' }
+    = f.input :address, input_html: { class: 'input-block-level', rows: '4' }
+    = f.input :note, input_html: { class: 'input-block-level', rows: '3' }
+    = f.input :key, input_html: { class: 'input-block-level' }
+    = f.input :isbn, input_html: { class: 'input-block-level' }
+
+  .form-actions
+    = f.button :submit, { class: 'btn btn-info' }
+    = link_to t('helpers.cancel'), records_path, { class: 'btn btn-link' }

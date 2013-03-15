@@ -63,7 +63,7 @@ body .nav .dropdown-menu .dropdown-toggle {
 }
 
 // Fix Route66
-#route66-index {
+#route66-index, .books {
   .table {
     background-color: $white;
   }
@@ -328,8 +328,15 @@ body#pages-home, body#records-index, body#records-show {
   }
 }
 
-// Records
-.record {
+// Books list
+body#books-index {
+  .books {
+    margin-top: 40px;
+  }
+}
+
+// Records and books
+.record, .book {
   background-color: $white;
   border-radius: 4px;
   margin-bottom: 20px;
@@ -340,7 +347,7 @@ body#pages-home, body#records-index, body#records-show {
   h1 {
     margin: 10px 20px;
   }
-  .record-actions {
+  .record-actions, .book-actions {
     padding: 0 10px;
     .action, .info {
       color: $grayLight;

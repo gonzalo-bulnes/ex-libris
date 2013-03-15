@@ -1,5 +1,11 @@
 es:
   helpers:
+    book:
+      title:
+        new: 'Nuevo libro'
+        edit: 'Editar libro'
+        index: 'Libros'
+        show: 'Ver libro'
     record:
       title:
         edit: 'Editar registro'
@@ -7,6 +13,8 @@ es:
         show: 'Ver registro'
     submit:
       update: 'Guardar'
+      book:
+        create: 'Crear libro'
       record:
         create: 'Crear registro'
     cancel: 'Cancelar'

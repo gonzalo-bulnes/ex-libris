@@ -15,12 +15,30 @@ es:
 
     labels:
       defaults:
+      book:
+        author: '<abbr title="Campo obligatorio"><i class="icon-asterisk"></i></abbr> Autor'
+        editor: 'Editor'
+        title: 'Título'
+        publisher: 'Editorial'
+        year: 'Año de publicación'
+        volume: 'Volúmen'
+        number: 'Tomo'
+        series: 'Serie'
+        address: 'Dirección de la editorial'
+        edition: 'Edición'
+        month: 'Mes de publicación'
+        note: 'Observaciones'
+        key: 'Identificador'
+        isbn: '<abbr title="International Standard Book Number">ISBN</abbr>'
       record:
         picture: 'Fotografía'
         location: 'Referencia del estante'
         number_of_books_estimate: '¿Cuántos libros hay en la fotografía?'
 
     placeholders:
+      book:
+        new:
+          author: 'ej. Jean Texereau'
       record:
         new:
           picture: ''
@@ -29,6 +47,9 @@ es:
 
     hints:
       defaults:
+      book:
+        author: 'Escribe el nombre más completo posible, separa por comas varios autores'
+        editor: 'Cuando el libro es una compilación, indica el editor'
       record:
         edit:
           picture: 'Si no quieres cambiar la fotografía, deja este campo en blanco'
