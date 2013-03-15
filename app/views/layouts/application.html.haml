@@ -50,13 +50,7 @@
   / Add your site or application content here
   = yield
 
-  %footer#footer
-    .container
-      .row
-        .span12
-          %i.icon-github
-          %small
-            %a{ href: 'https://github.com/gonzalo-bulnes/ex-libris', title: "Including the image credits" } Credits
+  = render 'application/shared/footer'
 
   / JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom
   = javascript_include_tag 'application'

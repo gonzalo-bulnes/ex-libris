@@ -1,0 +1,15 @@
+%a.thumbnail{ href: record_path(record), 'data-id' => record.id }
+  = image_tag record.picture.url(:thumb)
+  .caption
+    %p
+      %i.icon-map-marker
+      Estante
+      %strong
+        = record.location
+        - if record.state.presence
+          &nbsp;
+          %i.icon-pencil.icon-muted
+
+=# link_to 'Show', record
+=# link_to 'Edit', edit_record_path(record)
+= link_to 'Destroy', record, method: :delete, data: { confirm: 'Are you sure?' }
