@@ -12,13 +12,17 @@
           = image_tag @record.picture.url(:medium), class: "img-polaroid", class: 'span6'
         .row.row-desktop
           .span6
-            %span
-              %i.icon-map-marker
-              Estante
-              %strong
-                = @record.location
+            .record-actions
+              %span.info
+                %i.icon-map-marker
+                Estante
+                %strong
+                  = @record.location
+              %span.info{ href: '#', title: 'Este registro está listo para revisar.' }
+                %i.icon-eye-open{ style: 'font-size: 18px;' }
 
-            %a.btn.btn-link.custom-btn-icon.custom-btn-icon-inverse{ href: '#', title: 'Este registro está listo para revisar.' }
-              %i.icon-eye-open
-            = link_to raw('<i class="icon-plus"></i> Agregar un libro'), '#', class: 'btn'
-            = link_to raw('<i class="icon-comments"></i> 6 comentarios'), '#', class: 'btn btn-link'
+              %span.action
+                = link_to raw('<i class="icon-plus"></i> Agregar un libro'), '#', class: 'btn'
+
+              %nav.action.pull-right
+                =# link_to raw('<i class="icon-comments"></i> 6 comentarios'), '#', class: 'btn btn-link'

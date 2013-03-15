@@ -40,6 +40,9 @@ a.btn {
   &:visited {
     color: $grayDark;
   }
+  i {
+    margin-bottom: -3px;
+  }
 }
 
 // Fix Bootstrap .dropdown-menu
@@ -333,12 +336,21 @@ body#pages-home, body#records-index, body#records-show {
   margin-top: 20px;
   padding-bottom: 0;
   padding-top: 10px;
+
   h1 {
     margin: 10px 20px;
   }
-  span {
-    display: inline-block;
-    margin: 10px 20px;
+  .record-actions {
+    padding: 0 10px;
+    .action, .info {
+      color: $grayLight;
+      display: inline-block;
+      margin: 10px;
+    }
+    .action {
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
   }
 }
 
