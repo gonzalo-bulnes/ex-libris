@@ -11,8 +11,9 @@
         .row.row-desktop
           .span6
             .book-actions
-              %span.info
-                %i.icon-map-marker
-                Estante
-                %strong
-                  = @book.record.location
+              %nav.action
+                %a{ href: record_path(@book.record) }
+                  %i.icon-map-marker
+                  Estante
+                  %strong
+                    = @book.record.location

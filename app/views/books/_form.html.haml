@@ -1,10 +1,10 @@
-= simple_form_for @book, url: record_books_url, html: { class: 'custom-form' } do |f|
+= simple_form_for @book, url: @url, html: { class: 'custom-form' } do |f|
 
   .form-notifications
     = f.error_notification
 
   .form-inputs
-    = f.hidden :record_id, value: params[:record_id]
+    = f.input :record_id, as: :hidden, input_html: { value: params[:record_id] }
     = f.input :author, input_html: { class: 'input-block-level' }
     = f.input :editor, input_html: { class: 'input-block-level' }
     = f.input :title, input_html: { class: 'input-block-level', rows: '3' }

@@ -4,4 +4,8 @@ FactoryGirl.define do
     publisher "Willmann-Bell"
     year "1984"
   end
+
+  factory :complete_book, parent: :book do
+    isbn 9782264039880
+  end
 end

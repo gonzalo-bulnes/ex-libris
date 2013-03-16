@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130315202851) do
+ActiveRecord::Schema.define(:version => 20130316032845) do
 
   create_table "books", :force => true do |t|
     t.string   "author"
@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(:version => 20130315202851) do
     t.string   "month"
     t.text     "note"
     t.string   "key"
-    t.integer  "isbn"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "record_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "isbn",       :limit => 8
+    t.integer  "record_id"
   end
 
   create_table "records", :force => true do |t|

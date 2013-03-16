@@ -70,6 +70,7 @@ describe Book do
 
   it "should have valid factory" do
     FactoryGirl.build(:book).should be_valid
+    FactoryGirl.build(:complete_book).should be_valid
   end
 
   it "requires an author or an editor" do

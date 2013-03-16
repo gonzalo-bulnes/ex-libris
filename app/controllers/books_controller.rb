@@ -25,6 +25,7 @@ class BooksController < ApplicationController
   # GET /records/1/new.json
   def new
     @book = Book.new
+    @url = record_books_url
 
     respond_to do |format|
       format.html # new.html.erb
@@ -57,6 +58,7 @@ class BooksController < ApplicationController
   # PUT /records/1/books/1.json
   def update
     @book = Book.find(params[:id])
+    @url = book_url(@book)
 
     respond_to do |format|
       if @book.update_attributes(params[:book])

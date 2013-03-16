@@ -1,9 +1,9 @@
 ExLibris::Application.routes.draw do
 
-  resources :books, only: [:show, :index, :destroy]
+  resources :books, only: [:show, :index, :edit, :update, :destroy]
 
   resources :records do
-    resource :books, only: [:new, :create, :edit, :update]
+    resource :books, only: [:new, :create]
   end
 
   # OmniAuth
