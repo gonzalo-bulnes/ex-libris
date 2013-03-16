@@ -8,7 +8,20 @@
 
       = link_to "Ex Libris", root_url, class: 'brand'
 
-      .nav-collapse.collapse
+      - if current_user
+        / See http://twitter.github.com/bootstrap/components.html#dropdowns
+        .nav-collapse.collapse.pull-left
+          %ul.nav
+            %li{ class: "#{ active? :records }" }
+              %a{ href: records_path }
+                %i.icon-picture
+                Inventario
+            %li{ class: "#{ active? :books }" }
+              %a{ href: books_path }
+                %i.icon-book
+                Libros
+
+      .nav-collapse.collapse.pull-right
         %ul.nav
           - if current_user
             / See http://twitter.github.com/bootstrap/components.html#dropdowns
@@ -18,13 +31,13 @@
                   = gravatar_image_tag(current_user.email, alt: "")
                   = current_user.name
                 %ul.dropdown-menu
-                  %li
+                  %li{ class: "#{ active? :users }" }
                     %a{ href: signout_path }
                       Cerrar sesión
                       %i.icon-signout
           - else
             - unless params[:controller] == 'pages' and params[:action] == 'home'
               %li.active
-                %a{ href: "#" }
+                %a{ href: root_url }
                   Iniciar sesión
                   %i.icon-signin
