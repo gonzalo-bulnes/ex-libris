@@ -5,7 +5,7 @@
 
   .form-inputs
 
-    .control-group.file.required
+    .control-group.file.required{ class: "#{ error? :picture, f }" }
       = f.label :picture
       = f.error :picture
       = f.file_field :picture
