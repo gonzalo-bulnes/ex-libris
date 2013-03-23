@@ -1,8 +1,14 @@
 -# requires book
 - @book = book
-.book
-  %h2
-    %i.icon-book
-    = @book.title.truncate(24, omission: '...')
+.book.accordion-group
+  .accordion-heading
+    %h2
+      %a.accordion-toggle{ 'data-toggle' => 'collapse', 'data-parent' => '#books-accordion', href: "#book_#{ @book.id }" }
+        %i.icon-caret-right
+        %i.icon-caret-down
+        %i.icon-book
+        = @book.title.truncate(24, omission: '...')
 
-  = render 'books/form'
+  %div.accordion-body.collapse.in{ id: "book_#{ @book.id }" }
+    .accordion-inner
+      = render 'books/form'
