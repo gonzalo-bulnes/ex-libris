@@ -1,0 +1,8 @@
+-# requires book
+- @book = book
+.book
+  %h2
+    %i.icon-book
+    = @book.title.truncate(24, omission: '...')
+
+  = render 'books/form'

@@ -56,4 +56,10 @@ describe Record do
   it "requires an estimate of the number of books on the picture" do
     FactoryGirl.build(:record, number_of_books_estimate: "").should_not be_valid
   end
+
+  it "requires the estimate of the number of books to be a number" do
+    pending "Temporary disabled: see RecordsHelper#number_of_books_estimate"
+    FactoryGirl.build(:record, number_of_books_estimate: "3").should_not be_valid
+    FactoryGirl.build(:record, number_of_books_estimate: 3).should be_valid
+  end
 end

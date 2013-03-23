@@ -335,6 +335,16 @@ body#books-index {
   }
 }
 
+@media (min-width: 979px) {
+
+  // Books inventory
+  body#records-show {
+    .record {
+      position: fixed;
+    }
+  }
+}
+
 // Records and books
 .record, .book {
   background-color: $white;
@@ -344,7 +354,7 @@ body#books-index {
   padding-bottom: 0;
   padding-top: 10px;
 
-  h1 {
+  h1, h2 {
     margin: 10px 20px;
   }
   .record-actions, .book-actions {

@@ -4,7 +4,7 @@
     = f.error_notification
 
   .form-inputs
-    = f.input :record_id, as: :hidden, input_html: { value: params[:record_id] }
+    = f.input :record_id, as: :hidden, input_html: { value: params[:record_id] || @book.record.id }
     = f.input :author, input_html: { class: 'input-block-level' }
     = f.input :editor, input_html: { class: 'input-block-level' }
     = f.input :title, input_html: { class: 'input-block-level', rows: '3' }

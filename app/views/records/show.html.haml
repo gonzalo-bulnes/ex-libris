@@ -1,12 +1,13 @@
 .container
   .row
-    .span6.offset3
+    .span6
       .record
         %h1
           %i.icon-picture
           = t('helpers.record.title.show')
           %small
-            <i class="icon-book"></i> 2 libros
+            %i.icon-book
+            = number_of_books(@record) + " libros"
 
         .row.row-desktop
           = image_tag @record.picture.url(:medium), class: "img-polaroid", class: 'span6'
@@ -26,3 +27,5 @@
 
               %nav.action.pull-right
                 =# link_to raw('<i class="icon-comments"></i> 6 comentarios'), '#', class: 'btn btn-link'
+    .span6
+      = render 'books'

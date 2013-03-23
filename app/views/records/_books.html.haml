@@ -1,0 +1,5 @@
+-# require @record
+.books
+  - @record.books.each do |book|
+    .row-desktop
+      = render 'records/books/edit', book: book
