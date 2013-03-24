@@ -1,0 +1,8 @@
+#new-book.book
+  %h2
+    %i.icon-book
+    = t('helpers.book.title.add')
+
+  - @book = @record.books.new
+  - @url = record_books_url(@record)
+  = render 'books/form'

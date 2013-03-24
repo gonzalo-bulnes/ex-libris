@@ -3,3 +3,7 @@
   - @record.books.each do |book|
     .row-desktop
       = render 'records/books/edit', book: book
+
+  .row-desktop
+    = render 'records/books/new'
+    = link_to raw('<i class="icon-plus"></i> Agregar un libro'), 'new_record_books_path(@record)', class: 'btn btn-large', id: 'add-record-book'

@@ -6,6 +6,7 @@ es:
         edit: 'Editar libro'
         index: 'Libros'
         show: 'Ver libro'
+        add: 'Nuevo libro'
     record:
       title:
         edit: 'Editar registro'

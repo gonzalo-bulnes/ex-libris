@@ -9,6 +9,6 @@
         %i.icon-book
         = @book.title.truncate(24, omission: '...')
 
-  %div.accordion-body.collapse.in{ id: "book_#{ @book.id }" }
+  %div.accordion-body.collapse{ id: "book_#{ @book.id }" }
     .accordion-inner
       = render 'books/form'

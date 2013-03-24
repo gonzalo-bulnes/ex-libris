@@ -29,4 +29,4 @@
 
   .form-actions
     = f.button :submit, { class: 'btn btn-info' }
-    = link_to t('helpers.cancel'), records_path, { class: 'btn btn-link' }
+    = link_to t('helpers.cancel'), records_path, { class: 'btn btn-link', id: "#{ @book.id.nil? ? 'cancel-record-book-form' : '' }" }
